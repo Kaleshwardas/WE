@@ -1,0 +1,36 @@
+body{
+    margin:0px;
+    padding:0px;
+    background-color: rgb(175, 145, 145);
+}
+
+
+#container{
+    margin:auto;
+    height:300px;
+    width:400px;
+    border:5px solid rgb(36, 37, 36);
+    margin-top:70px;
+    background-color: rgb(170, 230, 180);
+}
+h1{
+    text-align: center;
+    font-size: 100px;
+    color:rgba(219, 0, 0, 0.856);
+    margin-top: 10px;
+}
+h2{
+    color:rgb(54, 17, 189);
+    text-align: center;
+}
+button{
+    display:inline;
+    justify-content: space-between;
+    width:100px;
+    margin-left:60px;
+    height:30px;
+    background-color: blue;
+    color: white;
+    border-radius: 7px 7px 7px 7px;
+
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <style>
+      *{
+         margin:0px;
+         padding:0px;
+         box-sizing: border-box;
+      
+     }
+     body{
+         background-color: rgb(134, 198, 202);
+     }
+     #navbar{
+         display: flex;
+         justify-content: space-evenly;
+         padding:1%;
+         box-shadow: 2px 2px 5px 5px rgb(15, 18, 196);
+         margin-bottom: 30px;
+     }
+     #navbar>div{
+         display:flex;
+         list-style: none;
+
+     }
+     #navbar a{
+         text-decoration: none;
+         color:rgb(255, 255, 255);
+         font-size: 20px;
+     }
+     input{
+         display: block;
+         margin:15px 0px;
+         
+         font-size:20px;
+         padding:2%;
+     }
+     form{
+         width:400px;
+         border:1px solid rgb(230,230,230);
+         margin:auto;
+         padding:3%;
+         background-color: white;
+
+     }
+     button{
+         display:inline;
+         margin:5px;
+         padding:10px;
+         background-color: blue;
+         color: white;
+     }
+    
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="index.html">HOME</a></div>
+        <div><a href="mans.html">MAN</a></div>
+        <div><a href="woman.html">WOMAN</a></div>
+    </div>
+    <form id="form" >
+        <input class="input" id="imgURL" type="text" placeholder="Enter image url"><br>
+        <input class="input" id="brandName" type="text" placeholder="Enter Brand name"><br>
+        <input class="input" id="price" type="text" placeholder="Enter price"><br>
+        <button id="addman">Add Man</button>
+        <button id="addwoman">Add Woman</button>
+  </form>  
+</body>
+</html>
+<script>
+    document.querySelector("#addman").addEventListener("click",addManFunc)
+    var manDataArr=JSON.parse(localStorage.getItem("mansData"))||[];
+    function addManFunc(){
+        event.preventDefault()
+        manDataObj={
+            imgUrl:form.imgURL.value,
+            brandName:form.brandName.value,
+            price:form.price.value,
+        }
+        manDataArr.push(manDataObj)
+        localStorage.setItem("mansData",JSON.stringify(manDataArr))
+        console.log(manDataArr)
+        
+        // localStorage.setItem("investorsData",JSON.stringify(investorArr))
+    }
+    document.querySelector("#addwoman").addEventListener("click",addWomanFunc)
+    var womanDataArr=JSON.parse(localStorage.getItem("womanData"))||[];
+    function addWomanFunc(){
+        event.preventDefault()
+        womanDataObj={
+            imgUrl:form.imgURL.value,
+            brandName:form.brandName.value,
+            price:form.price.value,
+        }
+        womanDataArr.push(womanDataObj)
+        localStorage.setItem("womanData",JSON.stringify(womanDataArr))
+        console.log(womanDataArr)
+        
+        // localStorage.setItem("investorsData",JSON.stringify(investorArr))
+    }
+</script>
